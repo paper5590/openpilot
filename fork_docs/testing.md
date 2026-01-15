@@ -11,6 +11,7 @@ Tests car interfaces for common bugs without requiring a route. Replace `[brand]
 ### 2. Route-Based Model Testing
 ```bash
 python3 tools/car_porting/test_car_model.py [route_or_segment_name] --car [car_model]
+python3 tools/car_porting/test_car_model.py --car VOLVO_XC40_RECHARGE [route_or_segment_name]
 ```
 Runs comprehensive tests against a specific route to check for missing signals, blocked panda messages, and safety mismatches. [2](#0-1)
 
