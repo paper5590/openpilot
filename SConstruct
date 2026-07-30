@@ -111,9 +111,11 @@ elif arch == "Darwin":
   env.Append(LIBPATH=[
     "/System/Library/Frameworks/OpenGL.framework/Libraries",
     f"{brew_prefix}/opt/openssl@3/lib",
+    f"{brew_prefix}/opt/libusb/lib",
   ])
   env.Append(CPPPATH=[
     f"{brew_prefix}/opt/openssl@3/include",
+    f"{brew_prefix}/opt/libusb/include",
   ])
   env.Append(CCFLAGS=["-DGL_SILENCE_DEPRECATION"])
   env.Append(CXXFLAGS=["-DGL_SILENCE_DEPRECATION"])
