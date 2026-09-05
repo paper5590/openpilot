@@ -107,3 +107,8 @@ route_analysis/*.npz
 
 # Personal / local-only investigation notes (route IDs, dongle IDs, etc.)
 docs/plans/.private/
+
+# On-device marker: when present, manager skips the boot-time rebuild.
+# Created by hand on the comma device after a successful `op build`, so it
+# should never show up as untracked noise in git status.
+prebuilt
