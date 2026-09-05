@@ -18,6 +18,10 @@ Decider('MD5-timestamp')
 
 SetOption('num_jobs', max(1, int(os.cpu_count()/(1 if "CI" in os.environ else 2))))
 
+# restored for the pinned pre-v0.11.0 panda: its tests/libpanda/SConscript
+# calls GetOption('ubsan'), which upstream dropped from SConstruct in v0.11.1
+AddOption('--asan', action='store_true', help='turn on ASAN')
+AddOption('--ubsan', action='store_true', help='turn on UBSan')
 AddOption('--ccflags', action='store', type='string', default='', help='pass arbitrary flags over the command line')
 AddOption('--verbose', action='store_true', default=False, help='show full build commands')
 release = not os.path.exists(File('#.gitattributes').abspath) # file absent on release branch, see release_files.py
