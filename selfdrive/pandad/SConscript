@@ -1,4 +1,10 @@
+import libusb
+
 Import('env', 'common', 'messaging')
+
+env = env.Clone()
+env['CPPPATH'] += [libusb.INCLUDE_DIR]
+env['LIBPATH'] += [libusb.LIB_DIR]
 
 libs = ['usb-1.0', common, messaging, 'pthread']
 panda = env.Library('panda', ['panda.cc', 'panda_comms.cc', 'spi.cc'])
